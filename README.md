@@ -1,3 +1,3 @@
-# ServiceNow Notes
+# ServiceNow Utility Scripts
 
-Personal learning and research notes
+Personal collection of utility scripts for ServiceNow.

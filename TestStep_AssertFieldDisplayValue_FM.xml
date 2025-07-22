@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?><unload unload_date="2025-07-22 06:51:26">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description>Adds a custom Automated Test Framework (ATF) step, "Assert Field Display Value", which validates that the display value of a specified field on a record matches an expected string. Includes robust handling for whitespace and Unicode normalization. Useful for verifying translations and UI display values in multi-language environments.</description>
+<inserted/>
+<name>TestStep_AssertFieldDisplayValue_FM</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>e060c28bc33222103a2ebfddd4013193</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2025-07-22 06:51:25</sys_created_on>
+<sys_id>2dc1cacbc33222103a2ebfddd40131af</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2025-07-22 06:51:25</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>atf_input_variable_6374b53dc3fe62103a2ebfddd40131cd</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="atf_input_variable"&gt;&lt;atf_input_variable action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;attributes&gt;element_mapping_provider=com.glide.automated_testing_framework.ATFVariableElementMapper&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label&gt;Record Sys ID&lt;/column_label&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;u_record_sys_id&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value="String"&gt;string&lt;/internal_type&gt;&lt;label&gt;Record Sys ID&lt;/label&gt;&lt;mandatory&gt;true&lt;/mandatory&gt;&lt;max_length&gt;128&lt;/max_length&gt;&lt;model display_value="Assert Field Display Value"&gt;bd61b1b5c3fe62103a2ebfddd4013144&lt;/model&gt;&lt;model_id&gt;bd61b1b5c3fe62103a2ebfddd4013144&lt;/model_id&gt;&lt;model_table/&gt;&lt;name&gt;var__m_atf_input_variable_bd61b1b5c3fe62103a2ebfddd4013144&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;200&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;atf_input_variable&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-18 08:41:39&lt;/sys_created_on&gt;&lt;sys_id&gt;6374b53dc3fe62103a2ebfddd40131cd&lt;/sys_id&gt;&lt;sys_name&gt;Record Sys ID&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;atf_input_variable_6374b53dc3fe62103a2ebfddd40131cd&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-22 06:36:20&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/atf_input_variable&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id element="u_record_sys_id" name="var__m_atf_input_variable_bd61b1b5c3fe62103a2ebfddd4013144" table="atf_input_variable"&gt;6374b53dc3fe62103a2ebfddd40131cd&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-18 08:41:38&lt;/sys_created_on&gt;&lt;sys_id&gt;01a43df9c3fe62103a2ebfddd4013155&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-18 08:41:38&lt;/sys_updated_on&gt;&lt;table&gt;atf_input_variable&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-496359869</payload_hash>
+<remote_update_set display_value="TestStep_AssertFieldDisplayValue_FM">2dc1cacbc33222103a2ebfddd40131af</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2025-07-22 06:51:25</sys_created_on>
+<sys_id>21c1cacbc33222103a2ebfddd40131b0</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19830e441fd0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2025-07-22 06:51:25</sys_updated_on>
+<table/>
+<target_name>Record Sys ID</target_name>
+<type>Input Variables</type>
+<update_domain>global</update_domain>
+<update_guid>252182cb4b32221086b0d3842e931177</update_guid>
+<update_guid_history>252182cb4b32221086b0d3842e931177:-496359869,e05e39c7c6322210ab5902887a31386e:-496359869,51a4793d64fe6210500a673cbf0bf1c8:332935780,95a4793d53fe62103c4aa4a5dbd878c4:1403325698,d1a4793d12fe621068163c199d5f12c0:332935780</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>atf_input_variable_9fa4f93dc3fe62103a2ebfddd401317e</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="atf_input_variable"&gt;&lt;atf_input_variable action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;attributes&gt;element_mapping_provider=com.glide.automated_testing_framework.ATFVariableElementMapper&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label&gt;Field Name&lt;/column_label&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;u_field_name&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value="String"&gt;string&lt;/internal_type&gt;&lt;label&gt;Field Name&lt;/label&gt;&lt;mandatory&gt;true&lt;/mandatory&gt;&lt;max_length&gt;128&lt;/max_length&gt;&lt;model display_value="Assert Field Display Value"&gt;bd61b1b5c3fe62103a2ebfddd4013144&lt;/model&gt;&lt;model_id&gt;bd61b1b5c3fe62103a2ebfddd4013144&lt;/model_id&gt;&lt;model_table/&gt;&lt;name&gt;var__m_atf_input_variable_bd61b1b5c3fe62103a2ebfddd4013144&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;300&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;atf_input_variable&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-18 08:46:27&lt;/sys_created_on&gt;&lt;sys_id&gt;9fa4f93dc3fe62103a2ebfddd401317e&lt;/sys_id&gt;&lt;sys_name&gt;Field Name&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;atf_input_variable_9fa4f93dc3fe62103a2ebfddd401317e&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-22 06:36:26&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/atf_input_variable&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id element="u_field_name" name="var__m_atf_input_variable_bd61b1b5c3fe62103a2ebfddd4013144" table="atf_input_variable"&gt;9fa4f93dc3fe62103a2ebfddd401317e&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-18 08:46:27&lt;/sys_created_on&gt;&lt;sys_id&gt;27b5f93dc3fe62103a2ebfddd401310f&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-18 08:46:27&lt;/sys_updated_on&gt;&lt;table&gt;atf_input_variable&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+<payload_hash>638009389</payload_hash>
+<remote_update_set display_value="TestStep_AssertFieldDisplayValue_FM">2dc1cacbc33222103a2ebfddd40131af</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2025-07-22 06:51:26</sys_created_on>
+<sys_id>3dc1cacbc33222103a2ebfddd40131b0</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19830e461e40000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2025-07-22 06:51:26</sys_updated_on>
+<table/>
+<target_name>Field Name</target_name>
+<type>Input Variables</type>
+<update_domain>global</update_domain>
+<update_guid>e321c2cb543222106354a54032f014d1</update_guid>
+<update_guid_history>e321c2cb543222106354a54032f014d1:638009389,465e79c7193222109d3fa11dd97f1479:638009389,95ba797277faa610f95c484426488bb2:972991469,b0e9f532b2faa6109ca77449df7989e1:808553755,73b5fd7dd3fe6210c9120247d371a0de:-788139857,7fb5fd7d02fe62108eea4fd070ff29d9:972991469,ffb5fd7d47fe6210a4b20b18f7e41ed4:-788139857</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>atf_input_variable_7e6bb1c3c33222103a2ebfddd4013198</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="atf_input_variable"&gt;&lt;atf_input_variable action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;attributes&gt;element_mapping_provider=com.glide.automated_testing_framework.ATFVariableElementMapper&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label&gt;Expected Display Value&lt;/column_label&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;u_expected_display_value&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value="String"&gt;string&lt;/internal_type&gt;&lt;label&gt;Expected Display Value&lt;/label&gt;&lt;mandatory&gt;true&lt;/mandatory&gt;&lt;max_length&gt;128&lt;/max_length&gt;&lt;model display_value="Assert Field Display Value"&gt;bd61b1b5c3fe62103a2ebfddd4013144&lt;/model&gt;&lt;model_id&gt;bd61b1b5c3fe62103a2ebfddd4013144&lt;/model_id&gt;&lt;model_table/&gt;&lt;name&gt;var__m_atf_input_variable_bd61b1b5c3fe62103a2ebfddd4013144&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;400&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;atf_input_variable&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-22 06:25:41&lt;/sys_created_on&gt;&lt;sys_id&gt;7e6bb1c3c33222103a2ebfddd4013198&lt;/sys_id&gt;&lt;sys_name&gt;Expected Display Value&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;atf_input_variable_7e6bb1c3c33222103a2ebfddd4013198&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-22 06:36:30&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/atf_input_variable&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id element="u_expected_display_value" name="var__m_atf_input_variable_bd61b1b5c3fe62103a2ebfddd4013144" table="atf_input_variable"&gt;7e6bb1c3c33222103a2ebfddd4013198&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-22 06:25:41&lt;/sys_created_on&gt;&lt;sys_id&gt;60ebfdc3c33222103a2ebfddd401312d&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-22 06:25:41&lt;/sys_updated_on&gt;&lt;table&gt;atf_input_variable&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-76386190</payload_hash>
+<remote_update_set display_value="TestStep_AssertFieldDisplayValue_FM">2dc1cacbc33222103a2ebfddd40131af</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2025-07-22 06:51:26</sys_created_on>
+<sys_id>79c1cacbc33222103a2ebfddd40131b0</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19830e482250000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2025-07-22 06:51:26</sys_updated_on>
+<table/>
+<target_name>Expected Display Value</target_name>
+<type>Input Variables</type>
+<update_domain>global</update_domain>
+<update_guid>a93102cbcd3222109f9eb66bc99dda94</update_guid>
+<update_guid_history>a93102cbcd3222109f9eb66bc99dda94:-76386190,cb5eb1c72b322210fce85f58ebbe014c:-76386190,f8ebb507213222107ab2d0d50e3a90f6:1665575495,38ebb50711322210684365bbe3e179f2:-1307670353,b8ebb507a832221083052c8457d405e0:1665575495</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_atf_step_config_bd61b1b5c3fe62103a2ebfddd4013144</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_atf_step_config"&gt;&lt;sys_atf_step_config action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;batch_order_constraint&gt;start&lt;/batch_order_constraint&gt;&lt;can_mutate_page&gt;false&lt;/can_mutate_page&gt;&lt;category display_value="REST"&gt;4e9228749fc72200ef4afa7dc67fcff8&lt;/category&gt;&lt;class_name/&gt;&lt;class_type&gt;script&lt;/class_type&gt;&lt;deprecated&gt;false&lt;/deprecated&gt;&lt;description_generator&gt;&lt;![CDATA[function generateDescription(step) {
+  return gs.getMessage(
+    "Assert display value of field '{0}' on table '{1}' (sys_id: {2}) is '{3}'",
+    [
+      step.inputs.u_field_name,
+      step.inputs.u_table_name,
+      step.inputs.u_record_sys_id,
+      step.inputs.u_expected_display_value
+    ]
+  );
+}
+generateDescription(step);]]&gt;&lt;/description_generator&gt;&lt;html_description&gt;&lt;![CDATA[&lt;p&gt;&amp;lt;p&amp;gt;&lt;/p&gt;
+&lt;p&gt;  &amp;lt;strong&amp;gt;Assert Field Display Value&amp;lt;/strong&amp;gt; &amp;lt;br&amp;gt;&lt;/p&gt;
+&lt;p&gt;  &amp;lt;span style&amp;#61;&amp;#34;color:#666;font-size:90%;&amp;#34;&amp;gt;&lt;/p&gt;
+&lt;p&gt;    This test step &amp;lt;b&amp;gt;verifies&amp;lt;/b&amp;gt; that the &amp;lt;span style&amp;#61;&amp;#34;color:#205081;&amp;#34;&amp;gt;display value&amp;lt;/span&amp;gt; of a specified field on a record matches the &amp;lt;b&amp;gt;expected string&amp;lt;/b&amp;gt;.&amp;lt;br&amp;gt;&lt;/p&gt;
+&lt;p&gt;    The test will &amp;lt;span style&amp;#61;&amp;#34;color:#b72a2a;&amp;#34;&amp;gt;fail&amp;lt;/span&amp;gt; if the table, field, or record cannot be found, or if the actual display value does not match your expectation.&amp;lt;br&amp;gt;&lt;/p&gt;
+&lt;p&gt;  &amp;lt;/span&amp;gt;&lt;/p&gt;
+&lt;p&gt;  &amp;lt;ul&amp;gt;&lt;/p&gt;
+&lt;p&gt;    &amp;lt;li&amp;gt;&amp;lt;b&amp;gt;Table Name&amp;lt;/b&amp;gt;: Use the Table picker to select the table (e.g., &amp;lt;code&amp;gt;incident&amp;lt;/code&amp;gt;).&amp;lt;/li&amp;gt;&lt;/p&gt;
+&lt;p&gt;    &amp;lt;li&amp;gt;&amp;lt;b&amp;gt;Record Sys ID&amp;lt;/b&amp;gt;: Paste or query the record&amp;#39;s sys_id to target a specific row.&amp;lt;/li&amp;gt;&lt;/p&gt;
+&lt;p&gt;    &amp;lt;li&amp;gt;&amp;lt;b&amp;gt;Field Name&amp;lt;/b&amp;gt;: Enter the technical field name (e.g., &amp;lt;code&amp;gt;short_description&amp;lt;/code&amp;gt;, &amp;lt;code&amp;gt;title&amp;lt;/code&amp;gt;).&amp;lt;/li&amp;gt;&lt;/p&gt;
+&lt;p&gt;    &amp;lt;li&amp;gt;&amp;lt;b&amp;gt;Expected Display Value&amp;lt;/b&amp;gt;: Enter the exact string you expect (including translation if relevant).&amp;lt;/li&amp;gt;&lt;/p&gt;
+&lt;p&gt;  &amp;lt;/ul&amp;gt;&lt;/p&gt;
+&lt;p&gt;  &amp;lt;span style&amp;#61;&amp;#34;font-size:90%;color:#888;&amp;#34;&amp;gt;&lt;/p&gt;
+&lt;p&gt;    &amp;lt;em&amp;gt;Pro tip:&amp;lt;/em&amp;gt; This step is useful for validating multi-language values and reference/choice field labels.&lt;/p&gt;
+&lt;p&gt;  &amp;lt;/span&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;/p&amp;gt;&lt;/p&gt;]]&gt;&lt;/html_description&gt;&lt;icon&gt;icon-article-document&lt;/icon&gt;&lt;inputs/&gt;&lt;name&gt;Assert Field Display Value&lt;/name&gt;&lt;order&gt;5100&lt;/order&gt;&lt;outputs/&gt;&lt;performance_include&gt;false&lt;/performance_include&gt;&lt;step_env display_value="Server - REST"&gt;1a49153a53322200b8a6c2e5dec5872a&lt;/step_env&gt;&lt;step_execution_generator&gt;&lt;![CDATA[(function executeStep(inputs, outputs, stepResult, timeout) {
+    var tableName = inputs.u_table_name &amp;&amp; inputs.u_table_name.trim();
+    var recordSysId = inputs.u_record_sys_id &amp;&amp; inputs.u_record_sys_id.trim();
+    var fieldName = inputs.u_field_name &amp;&amp; inputs.u_field_name.trim();
+    var expectedDisplayValue = inputs.u_expected_display_value;
+
+    var MESSAGE_FAIL_NO_TABLE = "Failure: Table '" + tableName + "' does not exist or is not accessible.";
+    var MESSAGE_FAIL_NO_FIELD = "Failure: Field '" + fieldName + "' does not exist on table '" + tableName + "'.";
+    var MESSAGE_FAIL_NO_RECORD = "Failure: Record not found for sys_id '" + recordSysId + "' in table '" + tableName + "'.";
+    var MESSAGE_FAIL_NO_DISPLAY = "Failure: Display value cannot be retrieved; table/field may be invalid or field is empty.";
+    var MESSAGE_FAIL_MISMATCH = "Failure: Display value mismatch. Expected: '" + expectedDisplayValue + "'";
+    var MESSAGE_SUCCESS = "Success: Display value matches expected value: '" + expectedDisplayValue + "'";
+
+    // --- Robust comparison function ---
+    function robustCompare(a, b) {
+        function prep(str) {
+            if (!str) return '';
+            // Normalize Unicode (NFKC), trim, and collapse whitespace
+            return str.normalize("NFKC").replace(/\s+/g, ' ').trim();
+            // For case-insensitive comparison, use:
+            // return str.normalize("NFKC").replace(/\s+/g, ' ').trim().toLowerCase();
+        }
+        return prep(a) === prep(b);
+    }
+
+    try {
+        // Input validation
+        if (!tableName || !recordSysId || !fieldName || expectedDisplayValue === undefined) {
+            stepResult.setOutputMessage("Failure: One or more required inputs are missing.");
+            stepResult.setFailed();
+            return;
+        }
+
+        var td = GlideTableDescriptor.get(tableName);
+        if (!td.isValid()) {
+            stepResult.setOutputMessage(MESSAGE_FAIL_NO_TABLE);
+            stepResult.setFailed();
+            return;
+        }
+
+        var gr = new GlideRecord(tableName);
+        if (!gr.isValidField(fieldName)) {
+            stepResult.setOutputMessage(MESSAGE_FAIL_NO_FIELD);
+            stepResult.setFailed();
+            return;
+        }
+
+        if (!gr.get(recordSysId)) {
+            stepResult.setOutputMessage(MESSAGE_FAIL_NO_RECORD);
+            stepResult.setFailed();
+            return;
+        }
+
+        var displayValue = gr.getDisplayValue(fieldName);
+        if (displayValue === null || displayValue === "") {
+            stepResult.setOutputMessage(MESSAGE_FAIL_NO_DISPLAY);
+            stepResult.setFailed();
+            return;
+        }
+
+        outputs.u_display_value = displayValue;
+
+        if (!robustCompare(displayValue, expectedDisplayValue)) {
+            stepResult.setOutputMessage(
+                MESSAGE_FAIL_MISMATCH + ". Actual: '" + displayValue + "'"
+            );
+            stepResult.setFailed();
+            return;
+        }
+
+        stepResult.setOutputMessage(MESSAGE_SUCCESS);
+        stepResult.setSuccess();
+
+    } catch (e) {
+        stepResult.setOutputMessage("Unexpected error: " + e.message);
+        stepResult.setFailed();
+    }
+})(inputs, outputs, stepResult, timeout);]]&gt;&lt;/step_execution_generator&gt;&lt;sys_class_name&gt;sys_atf_step_config&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-18 08:39:02&lt;/sys_created_on&gt;&lt;sys_id&gt;bd61b1b5c3fe62103a2ebfddd4013144&lt;/sys_id&gt;&lt;sys_mod_count&gt;22&lt;/sys_mod_count&gt;&lt;sys_name&gt;Assert Field Display Value&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_atf_step_config_bd61b1b5c3fe62103a2ebfddd4013144&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-22 06:44:20&lt;/sys_updated_on&gt;&lt;template_reminder&gt;Assert that the field’s display value matches the expected string, e.g. “Assert the Application Menu title is ‘Fuhrpark’”.&lt;/template_reminder&gt;&lt;type display_value="Test Step" name="sys_atf_step"&gt;35ff02f778e022104f3459503ff42af0&lt;/type&gt;&lt;wizard_redirect/&gt;&lt;/sys_atf_step_config&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=bd61b1b5c3fe62103a2ebfddd4013144"/&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=bd61b1b5c3fe62103a2ebfddd4013144"/&gt;&lt;sys_element_mapping action="delete_multiple" query="table=var__m_atf_input_variable_bd61b1b5c3fe62103a2ebfddd4013144^id=bd61b1b5c3fe62103a2ebfddd4013144"/&gt;&lt;sys_element_mapping action="delete_multiple" query="table=var__m_atf_output_variable_bd61b1b5c3fe62103a2ebfddd4013144^id=bd61b1b5c3fe62103a2ebfddd4013144"/&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;bd61b1b5c3fe62103a2ebfddd4013144&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-18 08:39:02&lt;/sys_created_on&gt;&lt;sys_id&gt;3e04b579c3fe62103a2ebfddd401317e&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-18 08:39:02&lt;/sys_updated_on&gt;&lt;table&gt;sys_atf_step_config&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+<payload_hash>1351129905</payload_hash>
+<remote_update_set display_value="TestStep_AssertFieldDisplayValue_FM">2dc1cacbc33222103a2ebfddd40131af</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2025-07-22 06:51:26</sys_created_on>
+<sys_id>b1c1cacbc33222103a2ebfddd40131b1</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19830e2e8d90000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2025-07-22 06:51:26</sys_updated_on>
+<table/>
+<target_name>Assert Field Display Value</target_name>
+<type>Test Step Config</type>
+<update_domain>global</update_domain>
+<update_guid>c4d0028bdc32221099c66f1d94d591b0</update_guid>
+<update_guid_history>c4d0028bdc32221099c66f1d94d591b0:1351129905,71204e4b87322210fe35839293ca8007:1351129905,2e8db5074e322210e809d58c241e74c5:-92945201,cd0d7d476932221010f6fa0401c9ccf9:9018299,830cf907fe322210a89e2c966024ed78:426672184,712bb1c3fb322210f8d8b1b8574a0595:547682794,22d2c23eb0faa6101962551d61a5c397:-1002334865,3d52ce7a20faa610e29a836feb6bac5f:-135666050,284246fa50faa61056e091f5ea2c423a:1602160532,873206faecfaa610e9f28c5d7ba298fa:443912759,340202faf6faa6108c1eae8e5d17ca8c:1426426155,43204eb615faa610a6b74e23342343ae:32791699,4c4e793615faa6109759e0f3d34148ee:-1797956740,65cbf1f2b1faa6105c3dee2b2284ff37:-1318854911,fbda7932e2faa6100ba5a5ebdaef1998:-916406442,407839bed7baa610cfb889938801d748:1254206881,aab679fa92baa61091f6565885e70432:-1415002138,2c66f9fafabaa61054a01d845b1a6f22:492557103,1f9531fafbbaa610560d259ff1b5a89a:845183502,0d35753acabaa61058324810467d6d68:-462082653,a28375b6aebaa610b6da95f606a268d2:-1138479412,516339b625baa6107ff2c50bae5ab70d:2077744119,a0c6bdbddafe621021fe7a403c277f15:-1883247408,8f04bdb905fe62103939caa04ad73c57:798894106</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>atf_output_variable_00d5b1bdc3fe62103a2ebfddd40131bb</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="atf_output_variable"&gt;&lt;atf_output_variable action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;attributes&gt;element_mapping_provider=com.glide.automated_testing_framework.ATFVariableElementMapper&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label&gt;Display Value&lt;/column_label&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;u_display_value&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value="String"&gt;string&lt;/internal_type&gt;&lt;label&gt;Display Value&lt;/label&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;max_length&gt;128&lt;/max_length&gt;&lt;model display_value="Assert Field Display Value"&gt;bd61b1b5c3fe62103a2ebfddd4013144&lt;/model&gt;&lt;model_id&gt;bd61b1b5c3fe62103a2ebfddd4013144&lt;/model_id&gt;&lt;model_table/&gt;&lt;name&gt;var__m_atf_output_variable_bd61b1b5c3fe62103a2ebfddd4013144&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;100&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;atf_output_variable&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-18 08:47:47&lt;/sys_created_on&gt;&lt;sys_id&gt;00d5b1bdc3fe62103a2ebfddd40131bb&lt;/sys_id&gt;&lt;sys_name&gt;Display Value&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;atf_output_variable_00d5b1bdc3fe62103a2ebfddd40131bb&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-18 08:47:48&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/atf_output_variable&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id element="u_display_value" name="var__m_atf_output_variable_bd61b1b5c3fe62103a2ebfddd4013144" table="atf_output_variable"&gt;00d5b1bdc3fe62103a2ebfddd40131bb&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-18 08:47:47&lt;/sys_created_on&gt;&lt;sys_id&gt;8706b93dc3fe62103a2ebfddd40131f6&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-18 08:47:47&lt;/sys_updated_on&gt;&lt;table&gt;atf_output_variable&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-1268257988</payload_hash>
+<remote_update_set display_value="TestStep_AssertFieldDisplayValue_FM">2dc1cacbc33222103a2ebfddd40131af</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2025-07-22 06:51:26</sys_created_on>
+<sys_id>fdc1cacbc33222103a2ebfddd40131b0</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19830e5117f0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2025-07-22 06:51:26</sys_updated_on>
+<table/>
+<target_name>Display Value</target_name>
+<type>Output Variables</type>
+<update_domain>global</update_domain>
+<update_guid>a25186cbf5322210603c544c69017501</update_guid>
+<update_guid_history>a25186cbf5322210603c544c69017501:-1268257988,9306f5bd7bfe6210e0af673d2652b64c:1482656968,9706f5bd2dfe62106d96e949b89fb448:48389980,1306f5bdeefe6210d64219272cf7e644:1482656968</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>

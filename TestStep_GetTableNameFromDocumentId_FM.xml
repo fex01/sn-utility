@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><unload unload_date="2025-07-22 12:53:02">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description>Return the technical table name (e.g., "incident") for the given Document ID (sys_id in sys_db_object).</description>
+<inserted/>
+<name>TestStep_GetTableNameFromDocumentId_FM</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>44245743c3f622103a2ebfddd4013163</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2025-07-22 12:53:01</sys_created_on>
+<sys_id>62841f43c3f622103a2ebfddd40131e7</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2025-07-22 12:53:01</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_atf_step_config_65be0fc7c3b622103a2ebfddd40131d5</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_atf_step_config"&gt;&lt;sys_atf_step_config action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;batch_order_constraint/&gt;&lt;can_mutate_page&gt;false&lt;/can_mutate_page&gt;&lt;category display_value="Server"&gt;317c4dc20b202200a8d7a12cf6673aa8&lt;/category&gt;&lt;class_name/&gt;&lt;class_type&gt;script&lt;/class_type&gt;&lt;deprecated&gt;false&lt;/deprecated&gt;&lt;description_generator&gt;&lt;![CDATA[function generateDescription(step) {
+  return gs.getMessage(
+    "Get the table name for the Document ID '{0}' (from sys_db_object)",
+    [step.inputs.u_document_id]
+  );
+}
+generateDescription(step);]]&gt;&lt;/description_generator&gt;&lt;html_description&gt;&lt;![CDATA[&lt;p&gt;&amp;lt;p&amp;gt;&lt;/p&gt;
+&lt;p&gt;  &amp;lt;strong&amp;gt;Get Table Name from Document ID&amp;lt;/strong&amp;gt;&amp;lt;br&amp;gt;&lt;/p&gt;
+&lt;p&gt;  This step takes a &amp;lt;b&amp;gt;Document ID&amp;lt;/b&amp;gt; (sys_id of a table record in &amp;lt;code&amp;gt;sys_db_object&amp;lt;/code&amp;gt;), retrieves the table&amp;#39;s &amp;lt;b&amp;gt;technical name&amp;lt;/b&amp;gt; from the &amp;lt;code&amp;gt;name&amp;lt;/code&amp;gt; field, and returns it as an output variable.&amp;lt;br&amp;gt;&lt;/p&gt;
+&lt;p&gt;  &amp;lt;ul&amp;gt;&lt;/p&gt;
+&lt;p&gt;    &amp;lt;li&amp;gt;&amp;lt;b&amp;gt;Document ID&amp;lt;/b&amp;gt;: The sys_id of the table record (from sys_db_object).&amp;lt;/li&amp;gt;&lt;/p&gt;
+&lt;p&gt;  &amp;lt;/ul&amp;gt;&lt;/p&gt;
+&lt;p&gt;  Use this to convert a table Document ID to the actual table name string.&lt;/p&gt;
+&lt;p&gt;&amp;lt;/p&amp;gt;&lt;/p&gt;]]&gt;&lt;/html_description&gt;&lt;icon&gt;icon-article-document&lt;/icon&gt;&lt;inputs/&gt;&lt;name&gt;Get Table Name from Document ID&lt;/name&gt;&lt;order&gt;5200&lt;/order&gt;&lt;outputs/&gt;&lt;performance_include&gt;false&lt;/performance_include&gt;&lt;step_env display_value="Server - Independent"&gt;6c2bcea1870312009dccc9ded0e3ecca&lt;/step_env&gt;&lt;step_execution_generator&gt;&lt;![CDATA[(function executeStep(inputs, outputs, stepResult, timeout) {
+    var documentId;
+
+    // Robust extraction from Document ID input type
+    if (inputs.u_document_id) {
+        if (typeof inputs.u_document_id === 'string') {
+            documentId = inputs.u_document_id.trim();
+        } else if (typeof inputs.u_document_id === 'object' &amp;&amp; inputs.u_document_id.sys_id) {
+            documentId = inputs.u_document_id.sys_id.toString().trim();
+        } else if (typeof inputs.u_document_id.toString === 'function') {
+            documentId = inputs.u_document_id.toString().trim();
+        }
+    }
+
+    var MESSAGE_FAIL_NO_ID = "Failure: Document ID is required or could not be parsed.";
+    var MESSAGE_FAIL_NO_TABLE = "Failure: Table record not found in sys_db_object for sys_id '" + documentId + "'.";
+    var MESSAGE_FAIL_NO_NAME = "Failure: Field 'name' not found for sys_id '" + documentId + "'.";
+    var MESSAGE_SUCCESS = "Success: Table name retrieved.";
+
+    try {
+        if (!documentId) {
+            stepResult.setOutputMessage(MESSAGE_FAIL_NO_ID);
+            stepResult.setFailed();
+            return;
+        }
+
+        var gr = new GlideRecord('sys_db_object');
+        if (!gr.get(documentId)) {
+            stepResult.setOutputMessage(MESSAGE_FAIL_NO_TABLE);
+            stepResult.setFailed();
+            return;
+        }
+
+        var tableName = gr.getValue('name');
+        if (!tableName) {
+            stepResult.setOutputMessage(MESSAGE_FAIL_NO_NAME);
+            stepResult.setFailed();
+            return;
+        }
+
+        outputs.u_table_name = tableName;
+        stepResult.setOutputMessage(MESSAGE_SUCCESS + " Table Name: '" + tableName + "'");
+        stepResult.setSuccess();
+
+    } catch (e) {
+        stepResult.setOutputMessage("Unexpected error: " + e.message);
+        stepResult.setFailed();
+    }
+})(inputs, outputs, stepResult, timeout);]]&gt;&lt;/step_execution_generator&gt;&lt;sys_class_name&gt;sys_atf_step_config&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-22 12:31:01&lt;/sys_created_on&gt;&lt;sys_id&gt;65be0fc7c3b622103a2ebfddd40131d5&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;Get Table Name from Document ID&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_atf_step_config_65be0fc7c3b622103a2ebfddd40131d5&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-22 12:47:35&lt;/sys_updated_on&gt;&lt;template_reminder&gt;Return the technical table name (e.g., "incident") for the given Document ID (sys_id in sys_db_object).&lt;/template_reminder&gt;&lt;type display_value="Test Step" name="sys_atf_step"&gt;35ff02f778e022104f3459503ff42af0&lt;/type&gt;&lt;wizard_redirect/&gt;&lt;/sys_atf_step_config&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=65be0fc7c3b622103a2ebfddd40131d5"/&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=65be0fc7c3b622103a2ebfddd40131d5"/&gt;&lt;sys_element_mapping action="delete_multiple" query="table=var__m_atf_input_variable_65be0fc7c3b622103a2ebfddd40131d5^id=65be0fc7c3b622103a2ebfddd40131d5"/&gt;&lt;sys_element_mapping action="delete_multiple" query="table=var__m_atf_output_variable_65be0fc7c3b622103a2ebfddd40131d5^id=65be0fc7c3b622103a2ebfddd40131d5"/&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;65be0fc7c3b622103a2ebfddd40131d5&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-22 12:31:01&lt;/sys_created_on&gt;&lt;sys_id&gt;c88f034bc3b622103a2ebfddd401311b&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-22 12:31:01&lt;/sys_updated_on&gt;&lt;table&gt;sys_atf_step_config&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-321191541</payload_hash>
+<remote_update_set display_value="TestStep_GetTableNameFromDocumentId_FM">62841f43c3f622103a2ebfddd40131e7</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2025-07-22 12:53:01</sys_created_on>
+<sys_id>26841f43c3f622103a2ebfddd40131e7</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19832318a2c0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2025-07-22 12:53:01</sys_updated_on>
+<table/>
+<target_name>Get Table Name from Document ID</target_name>
+<type>Test Step Config</type>
+<update_domain>global</update_domain>
+<update_guid>42741f43e8f62210b3bddd251a826f81</update_guid>
+<update_guid_history>42741f43e8f62210b3bddd251a826f81:-321191541,3243170301f62210d4b7863c67ae29d5:-321191541,ab629b8fe6b62210b06d6aca2e5c70bc:2059679292,18d017cb95b622107cc3ed06eb0446f2:177375590,188fcfc7e0b622108cc1a805d0a87ef3:2067709188</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>

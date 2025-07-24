@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?><unload unload_date="2025-07-24 15:05:46">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description>Get the value of a field from a record by table name, sys_id, and field name.</description>
+<inserted/>
+<name>TestStep_GetFieldValue_FM</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>8a25c6fbc3ba22103a2ebfddd40131b4</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2025-07-24 15:05:45</sys_created_on>
+<sys_id>1a160a7fc3ba22103a2ebfddd40131ed</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2025-07-24 15:05:45</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>atf_output_variable_eed059b3c3b622103a2ebfddd401310b</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="atf_output_variable"&gt;&lt;atf_output_variable action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;attributes&gt;element_mapping_provider=com.glide.automated_testing_framework.ATFVariableElementMapper&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label&gt;Field Value&lt;/column_label&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;u_field_value&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value="String"&gt;string&lt;/internal_type&gt;&lt;label&gt;Field Value&lt;/label&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;max_length&gt;128&lt;/max_length&gt;&lt;model display_value="Get Field Value"&gt;a1ce747fc33622103a2ebfddd40131d7&lt;/model&gt;&lt;model_id&gt;a1ce747fc33622103a2ebfddd40131d7&lt;/model_id&gt;&lt;model_table/&gt;&lt;name&gt;var__m_atf_output_variable_a1ce747fc33622103a2ebfddd40131d7&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;100&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;atf_output_variable&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-24 11:13:36&lt;/sys_created_on&gt;&lt;sys_id&gt;eed059b3c3b622103a2ebfddd401310b&lt;/sys_id&gt;&lt;sys_name&gt;Field Value&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;atf_output_variable_eed059b3c3b622103a2ebfddd401310b&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-24 11:13:36&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/atf_output_variable&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id element="u_field_value" name="var__m_atf_output_variable_a1ce747fc33622103a2ebfddd40131d7" table="atf_output_variable"&gt;eed059b3c3b622103a2ebfddd401310b&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-24 11:13:36&lt;/sys_created_on&gt;&lt;sys_id&gt;edf059bfc33622103a2ebfddd40131bb&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-24 11:13:36&lt;/sys_updated_on&gt;&lt;table&gt;atf_output_variable&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+<payload_hash>163303156</payload_hash>
+<remote_update_set display_value="TestStep_GetFieldValue_FM">1a160a7fc3ba22103a2ebfddd40131ed</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2025-07-24 15:05:45</sys_created_on>
+<sys_id>16160a7fc3ba22103a2ebfddd40131ee</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1983cf793450000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2025-07-24 15:05:45</sys_updated_on>
+<table/>
+<target_name>Field Value</target_name>
+<type>Output Variables</type>
+<update_domain>global</update_domain>
+<update_guid>f2f5c67f93ba221061b71d15e6d8bfbe</update_guid>
+<update_guid_history>f2f5c67f93ba221061b71d15e6d8bfbe:163303156,79f099b3f9b6221010befd40207652f0:1288522008,7df099b3fbb62210bdbb38c4111ecaec:163303156,f5f099b3b0b62210be80614d5cef85e8:1288522008</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>atf_input_variable_f9af38bfc33622103a2ebfddd4013178</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="atf_input_variable"&gt;&lt;atf_input_variable action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;attributes&gt;element_mapping_provider=com.glide.automated_testing_framework.ATFVariableElementMapper&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label&gt;Record Sys ID&lt;/column_label&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;u_record_sys_id&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value=""&gt;document_id&lt;/internal_type&gt;&lt;label&gt;Record Sys ID&lt;/label&gt;&lt;mandatory&gt;true&lt;/mandatory&gt;&lt;max_length&gt;32&lt;/max_length&gt;&lt;model display_value="Get Field Value"&gt;a1ce747fc33622103a2ebfddd40131d7&lt;/model&gt;&lt;model_id&gt;a1ce747fc33622103a2ebfddd40131d7&lt;/model_id&gt;&lt;model_table/&gt;&lt;name&gt;var__m_atf_input_variable_a1ce747fc33622103a2ebfddd40131d7&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;200&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;atf_input_variable&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-24 11:11:52&lt;/sys_created_on&gt;&lt;sys_id&gt;f9af38bfc33622103a2ebfddd4013178&lt;/sys_id&gt;&lt;sys_name&gt;Record Sys ID&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;atf_input_variable_f9af38bfc33622103a2ebfddd4013178&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-24 11:12:06&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/atf_input_variable&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id element="u_record_sys_id" name="var__m_atf_input_variable_a1ce747fc33622103a2ebfddd40131d7" table="atf_input_variable"&gt;f9af38bfc33622103a2ebfddd4013178&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-24 11:11:52&lt;/sys_created_on&gt;&lt;sys_id&gt;9c9011bfc33622103a2ebfddd401314d&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-24 11:11:52&lt;/sys_updated_on&gt;&lt;table&gt;atf_input_variable&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+<payload_hash>1775061783</payload_hash>
+<remote_update_set display_value="TestStep_GetFieldValue_FM">1a160a7fc3ba22103a2ebfddd40131ed</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2025-07-24 15:05:45</sys_created_on>
+<sys_id>52160a7fc3ba22103a2ebfddd40131ee</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1983cf70d890000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2025-07-24 15:05:45</sys_updated_on>
+<table/>
+<target_name>Record Sys ID</target_name>
+<type>Input Variables</type>
+<update_domain>global</update_domain>
+<update_guid>9ed50e7f7fba2210801e451a91874606</update_guid>
+<update_guid_history>9ed50e7f7fba2210801e451a91874606:1775061783,3790d1b33cb62210f9a21dc61d365b15:1775061783,e09011b392b622100a440a3d57b839d1:810063736,ec9011b382b622107708c31225d6a7cc:1485471638,609011b320b62210073e5b431fbd46c8:810063736</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>atf_input_variable_b15f30bfc33622103a2ebfddd40131bf</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="atf_input_variable"&gt;&lt;atf_input_variable action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;attributes&gt;element_mapping_provider=com.glide.automated_testing_framework.ATFVariableElementMapper&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label&gt;Table Name&lt;/column_label&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;u_table_name&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value=""&gt;table_name&lt;/internal_type&gt;&lt;label&gt;Table Name&lt;/label&gt;&lt;mandatory&gt;true&lt;/mandatory&gt;&lt;max_length&gt;80&lt;/max_length&gt;&lt;model display_value="Get Field Value"&gt;a1ce747fc33622103a2ebfddd40131d7&lt;/model&gt;&lt;model_id&gt;a1ce747fc33622103a2ebfddd40131d7&lt;/model_id&gt;&lt;model_table/&gt;&lt;name&gt;var__m_atf_input_variable_a1ce747fc33622103a2ebfddd40131d7&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;100&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;atf_input_variable&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-24 09:57:48&lt;/sys_created_on&gt;&lt;sys_id&gt;b15f30bfc33622103a2ebfddd40131bf&lt;/sys_id&gt;&lt;sys_name&gt;Table Name&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;atf_input_variable_b15f30bfc33622103a2ebfddd40131bf&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-24 09:57:48&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/atf_input_variable&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id element="u_table_name" name="var__m_atf_input_variable_a1ce747fc33622103a2ebfddd40131d7" table="atf_input_variable"&gt;b15f30bfc33622103a2ebfddd40131bf&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-24 09:57:47&lt;/sys_created_on&gt;&lt;sys_id&gt;0b9ffcbbc33622103a2ebfddd4013115&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-24 09:57:47&lt;/sys_updated_on&gt;&lt;table&gt;atf_input_variable&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+<payload_hash>1251594663</payload_hash>
+<remote_update_set display_value="TestStep_GetFieldValue_FM">1a160a7fc3ba22103a2ebfddd40131ed</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2025-07-24 15:05:45</sys_created_on>
+<sys_id>9e160a7fc3ba22103a2ebfddd40131ed</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1983cf6d12c0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2025-07-24 15:05:45</sys_updated_on>
+<table/>
+<target_name>Table Name</target_name>
+<type>Input Variables</type>
+<update_domain>global</update_domain>
+<update_guid>6ec50a7f8eba22101b23341822fa04bc</update_guid>
+<update_guid_history>6ec50a7f8eba22101b23341822fa04bc:1251594663,ef9fb4bf18362210af58a7380791e0b7:1408546129,2f9fb4bf1b362210d55251a4577bc8b3:1251594663,939fb4bff4362210486e9e529eb63baf:1408546129</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_atf_step_config_a1ce747fc33622103a2ebfddd40131d7</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_atf_step_config"&gt;&lt;sys_atf_step_config action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;batch_order_constraint/&gt;&lt;can_mutate_page&gt;false&lt;/can_mutate_page&gt;&lt;category display_value="Server"&gt;317c4dc20b202200a8d7a12cf6673aa8&lt;/category&gt;&lt;class_name/&gt;&lt;class_type&gt;script&lt;/class_type&gt;&lt;deprecated&gt;false&lt;/deprecated&gt;&lt;description_generator&gt;&lt;![CDATA[(function(step) {
+    return "Get the value of field '" + (step.inputs.u_field_name || "&lt;field&gt;") +
+        "' from table '" + (step.inputs.u_table_name || "&lt;table&gt;") +
+        "' for record sys_id '" + (step.inputs.u_record_sys_id || "&lt;sys_id&gt;") + "'.";
+})(step);]]&gt;&lt;/description_generator&gt;&lt;html_description&gt;&lt;![CDATA[&lt;p&gt;&amp;lt;p&amp;gt;&lt;br /&gt;  &amp;lt;strong&amp;gt;Goal:&amp;lt;/strong&amp;gt; Retrieve the raw (non-display) value of a field from a record, given the table name, record sys_id, and field name.&lt;br /&gt;&amp;lt;/p&amp;gt;&lt;br /&gt;&amp;lt;p&amp;gt;&lt;br /&gt;  &amp;lt;strong&amp;gt;Example Use Case:&amp;lt;/strong&amp;gt; Use this step to fetch values for further assertions or use in parameterized tests—such as comparing reference IDs, numeric, or string values in subsequent steps.&lt;br /&gt;&amp;lt;/p&amp;gt;&lt;br /&gt;&amp;lt;p&amp;gt;&lt;br /&gt;  &amp;lt;strong&amp;gt;How to use:&amp;lt;/strong&amp;gt;&lt;br /&gt;  &amp;lt;ul&amp;gt;&lt;br /&gt;    &amp;lt;li&amp;gt;Provide the technical table name (e.g., &amp;lt;code&amp;gt;x_app_vehicle_model&amp;lt;/code&amp;gt;).&amp;lt;/li&amp;gt;&lt;br /&gt;    &amp;lt;li&amp;gt;Provide the sys_id of the record to inspect.&amp;lt;/li&amp;gt;&lt;br /&gt;    &amp;lt;li&amp;gt;Specify the field&amp;#39;s technical name (e.g., &amp;lt;code&amp;gt;status&amp;lt;/code&amp;gt; or &amp;lt;code&amp;gt;assigned_to&amp;lt;/code&amp;gt;).&amp;lt;/li&amp;gt;&lt;br /&gt;    &amp;lt;li&amp;gt;The step will output the field&amp;#39;s raw value as a string.&amp;lt;/li&amp;gt;&lt;br /&gt;  &amp;lt;/ul&amp;gt;&lt;br /&gt;&amp;lt;/p&amp;gt;&lt;/p&gt;]]&gt;&lt;/html_description&gt;&lt;icon&gt;icon-article-document&lt;/icon&gt;&lt;inputs/&gt;&lt;name&gt;Get Field Value&lt;/name&gt;&lt;order&gt;5700&lt;/order&gt;&lt;outputs/&gt;&lt;performance_include&gt;false&lt;/performance_include&gt;&lt;step_env display_value="Server - Independent"&gt;6c2bcea1870312009dccc9ded0e3ecca&lt;/step_env&gt;&lt;step_execution_generator&gt;&lt;![CDATA[(function(inputs, outputs, stepResult) {
+    try {
+        var tableName = inputs.u_table_name &amp;&amp; inputs.u_table_name.trim();
+        var recordSysId = inputs.u_record_sys_id &amp;&amp; inputs.u_record_sys_id.trim();
+        var fieldName = inputs.u_field_name &amp;&amp; inputs.u_field_name.trim();
+
+        if (!tableName || !recordSysId || !fieldName) {
+            stepResult.setOutputMessage("Missing required input(s):" +
+                (!tableName ? " Table Name;" : "") +
+                (!recordSysId ? " Record Sys ID;" : "") +
+                (!fieldName ? " Field Name;" : "")
+            );
+            stepResult.setFailed();
+            return;
+        }
+
+        // Table and field validation
+        var td = GlideTableDescriptor.get(tableName);
+        if (!td || !td.isValid()) {
+            stepResult.setOutputMessage("Table '" + tableName + "' does not exist or is not accessible.");
+            stepResult.setFailed();
+            return;
+        }
+
+        var gr = new GlideRecord(tableName);
+        if (!gr.isValidField(fieldName)) {
+            stepResult.setOutputMessage("Field '" + fieldName + "' does not exist on table '" + tableName + "'.");
+            stepResult.setFailed();
+            return;
+        }
+
+        if (!gr.get(recordSysId)) {
+            stepResult.setOutputMessage("Record with sys_id '" + recordSysId + "' not found in table '" + tableName + "'.");
+            stepResult.setFailed();
+            return;
+        }
+
+        var value = gr.getValue(fieldName);
+        outputs.u_field_value = value;
+
+        stepResult.setOutputMessage("Field '" + fieldName + "' value for record '" + recordSysId + "' in table '" + tableName + "': " + value);
+        stepResult.setSuccess();
+    } catch (e) {
+        stepResult.setOutputMessage("Unexpected error: " + e.message);
+        stepResult.setFailed();
+    }
+})(inputs, outputs, stepResult);]]&gt;&lt;/step_execution_generator&gt;&lt;sys_class_name&gt;sys_atf_step_config&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-24 09:56:31&lt;/sys_created_on&gt;&lt;sys_id&gt;a1ce747fc33622103a2ebfddd40131d7&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;Get Field Value&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_atf_step_config_a1ce747fc33622103a2ebfddd40131d7&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-24 09:56:31&lt;/sys_updated_on&gt;&lt;template_reminder&gt;Get the value of a field from a record by table name, sys_id, and field name.&lt;/template_reminder&gt;&lt;type display_value="Test Step" name="sys_atf_step"&gt;35ff02f778e022104f3459503ff42af0&lt;/type&gt;&lt;wizard_redirect/&gt;&lt;/sys_atf_step_config&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=a1ce747fc33622103a2ebfddd40131d7"/&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=a1ce747fc33622103a2ebfddd40131d7"/&gt;&lt;sys_element_mapping action="delete_multiple" query="table=var__m_atf_input_variable_a1ce747fc33622103a2ebfddd40131d7^id=a1ce747fc33622103a2ebfddd40131d7"/&gt;&lt;sys_element_mapping action="delete_multiple" query="table=var__m_atf_output_variable_a1ce747fc33622103a2ebfddd40131d7^id=a1ce747fc33622103a2ebfddd40131d7"/&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;a1ce747fc33622103a2ebfddd40131d7&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-24 09:56:30&lt;/sys_created_on&gt;&lt;sys_id&gt;9c5f347fc33622103a2ebfddd40131df&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-24 09:56:30&lt;/sys_updated_on&gt;&lt;table&gt;sys_atf_step_config&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+<payload_hash>1070253029</payload_hash>
+<remote_update_set display_value="TestStep_GetFieldValue_FM">1a160a7fc3ba22103a2ebfddd40131ed</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2025-07-24 15:05:45</sys_created_on>
+<sys_id>d6160a7fc3ba22103a2ebfddd40131ee</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1983cf546ff0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2025-07-24 15:05:45</sys_updated_on>
+<table/>
+<target_name>Get Field Value</target_name>
+<type>Test Step Config</type>
+<update_domain>global</update_domain>
+<update_guid>4265423ff4ba22104d1df6d6ba7b73a2</update_guid>
+<update_guid_history>4265423ff4ba22104d1df6d6ba7b73a2:1070253029,a45ffc7fa4362210c82f7b555c8020e1:1070253029</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>atf_input_variable_ada0d1b3c3b622103a2ebfddd40131be</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="atf_input_variable"&gt;&lt;atf_input_variable action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;attributes&gt;element_mapping_provider=com.glide.automated_testing_framework.ATFVariableElementMapper&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label&gt;Field Name&lt;/column_label&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;u_field_name&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value="String"&gt;string&lt;/internal_type&gt;&lt;label&gt;Field Name&lt;/label&gt;&lt;mandatory&gt;true&lt;/mandatory&gt;&lt;max_length&gt;80&lt;/max_length&gt;&lt;model display_value="Get Field Value"&gt;a1ce747fc33622103a2ebfddd40131d7&lt;/model&gt;&lt;model_id&gt;a1ce747fc33622103a2ebfddd40131d7&lt;/model_id&gt;&lt;model_table/&gt;&lt;name&gt;var__m_atf_input_variable_a1ce747fc33622103a2ebfddd40131d7&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;300&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;atf_input_variable&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-24 11:12:50&lt;/sys_created_on&gt;&lt;sys_id&gt;ada0d1b3c3b622103a2ebfddd40131be&lt;/sys_id&gt;&lt;sys_name&gt;Field Name&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;atf_input_variable_ada0d1b3c3b622103a2ebfddd40131be&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-24 11:17:07&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/atf_input_variable&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id element="u_field_name" name="var__m_atf_input_variable_a1ce747fc33622103a2ebfddd40131d7" table="atf_input_variable"&gt;ada0d1b3c3b622103a2ebfddd40131be&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-24 11:12:50&lt;/sys_created_on&gt;&lt;sys_id&gt;9ec0d97fc33622103a2ebfddd40131c9&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-24 11:12:50&lt;/sys_updated_on&gt;&lt;table&gt;atf_input_variable&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-1849875786</payload_hash>
+<remote_update_set display_value="TestStep_GetFieldValue_FM">1a160a7fc3ba22103a2ebfddd40131ed</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2025-07-24 15:05:45</sys_created_on>
+<sys_id>da160a7fc3ba22103a2ebfddd40131ed</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1983cf74eab0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2025-07-24 15:05:45</sys_updated_on>
+<table/>
+<target_name>Field Name</target_name>
+<type>Input Variables</type>
+<update_domain>global</update_domain>
+<update_guid>26e50e7f85ba22105f7ae281ddd95e0d</update_guid>
+<update_guid_history>26e50e7f85ba22105f7ae281ddd95e0d:-1849875786,55c11df37fb62210e89da9ec3b39b6b8:-1849875786,a9d019b369b62210f7f7e3b4d21cb43f:-947546680,22c095b349b622102e8c8c26e334c46b:165557700,66c095b32fb62210acd017bf3ffeeb67:1196037446,62c095b34db622109394fcc672485263:165557700</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>

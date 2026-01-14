@@ -1,23 +1,20 @@
 /**
- * Background Script (Prototype): Bulk adapt classic form layouts to display Lifecycle fields (Asset tables)
+ * Background Script (Prototype): Bulk adapt classic form layouts to display Lifecycle fields on CI forms
  *
  * Purpose:
- * - Inserts life_cycle_stage + life_cycle_stage_status into classic form sections that show BOTH
- *   legacy asset status fields: install_status + substatus.
+ * - Inserts life_cycle_stage + life_cycle_stage_status into CI form views that use legacy status fields.
  * - Prints a CSV report (always), and optionally applies changes (CONFIG.APPLY=true).
  *
  * Scope:
- * - All tables with name STARTSWITH CONFIG.TABLE_PREFIX plus CONFIG.EXTRA_TABLES.
+ * - All tables with name STARTSWITH "cmdb_ci" plus "service_offering".
  *
  * Behavior (per table + view):
- * - Discovers views where legacy fields exist.
+ * - Processes views where either install_status OR operational_status exists anywhere on that view.
  * - Skips (table, view) if life_cycle_stage exists anywhere on that view.
- * - For each section that contains BOTH legacy fields:
- *    1) Determines anchor positions for install_status and substatus (deterministic if duplicates exist).
- *    2) Skips the section if life_cycle_stage already exists in that section.
- *    3) Shifts existing elements to make space at both anchor positions:
- *         newPos = oldPos + (oldPos >= posInstall ? 1 : 0) + (oldPos >= posSub ? 1 : 0)
- *    4) Inserts life_cycle_stage at posInstall and life_cycle_stage_status at posSub.
+ * - Finds a single anchor (earliest legacy status element by position; tie-breaker sys_id) and:
+ *    1) Shifts all elements in the anchor section with position >= anchorPos by +2
+ *    2) Inserts life_cycle_stage at anchorPos
+ *    3) Inserts life_cycle_stage_status at anchorPos + 1
  *
  * How to use:
  * - Set CONFIG.APPLY=false for dry-run (CSV report only).
@@ -32,12 +29,10 @@
   /************** CONFIG **************/
   var CONFIG = {
     APPLY: false, // false = report only, true = apply updates/inserts (still prints report)
+    TABLE_PREFIX: "cmdb_ci",
+    EXTRA_TABLES: ["service_offering"],
 
-    TABLE_PREFIX: "alm_", // discover all tables starting with this prefix
-    EXTRA_TABLES: [], // add non-prefix tables here if needed
-
-    LEGACY_INSTALL: "install_status",
-    LEGACY_SUB: "substatus",
+    LEGACY_FIELDS: ["install_status", "operational_status"],
     LC_STAGE: "life_cycle_stage",
     LC_STATUS: "life_cycle_stage_status",
   };
@@ -62,9 +57,9 @@
     if (s.indexOf('"') >= 0) s = s.replace(/"/g, '""');
     if (
       s.indexOf(",") >= 0 ||
+      s.indexOf('"') >= 0 ||
       s.indexOf("\n") >= 0 ||
-      s.indexOf("\r") >= 0 ||
-      s.indexOf('"') >= 0
+      s.indexOf("\r") >= 0
     )
       s = '"' + s + '"';
     return s;
@@ -109,28 +104,10 @@
     return isNaN(n) ? 0 : n;
   }
 
-  function isSysId(s) {
-    return s && (s + "").length === 32 && /^[0-9a-f]{32}$/i.test(s + "");
-  }
-
-  var viewCache = {}; // sys_id -> title
-  function getViewDisplay(viewValue) {
-    var v = (viewValue || "").toString().trim();
-    if (!v) return "Default";
-    if (!isSysId(v)) return v;
-
-    if (viewCache[v]) return viewCache[v];
-
-    var vw = new GlideRecord("sys_ui_view");
-    viewCache[v] = vw.get(v)
-      ? (vw.getValue("title") || vw.getDisplayValue() || v).toString()
-      : v;
-    return viewCache[v];
-  }
-
-  function stableLess(posA, sysIdA, posB, sysIdB) {
-    if (posA !== posB) return posA < posB;
-    return (sysIdA || "") < (sysIdB || "");
+  function stableLess(a, b) {
+    // Sort by position asc, then by sys_id asc for deterministic tie-breaker
+    if (a.pos !== b.pos) return a.pos < b.pos;
+    return (a.sys_id || "") < (b.sys_id || "");
   }
 
   function elementExistsInSection(sectionSysId, elementName) {
@@ -145,6 +122,7 @@
   function insertElement(
     table,
     viewLabel,
+    viewId,
     sectionSysId,
     elementName,
     position
@@ -152,7 +130,7 @@
     if (elementExistsInSection(sectionSysId, elementName)) {
       addRow({
         table: table,
-        view: viewLabel,
+        view: viewLabel, // <-- display name
         action: "INSERT_SKIP_EXISTS",
         section: sectionSysId,
         element: elementName,
@@ -166,7 +144,7 @@
     if (!CONFIG.APPLY) {
       addRow({
         table: table,
-        view: viewLabel,
+        view: viewLabel, // <-- display name
         action: "INSERT_DRYRUN",
         section: sectionSysId,
         element: elementName,
@@ -186,7 +164,7 @@
 
     addRow({
       table: table,
-      view: viewLabel,
+      view: viewLabel, // <-- display name
       action: "INSERT_APPLIED",
       section: sectionSysId,
       element: elementName,
@@ -196,6 +174,26 @@
     });
   }
 
+  function isSysId(s) {
+    return s && (s + "").length === 32 && /^[0-9a-f]{32}$/i.test(s + "");
+  }
+
+  var viewCache = {}; // sys_id -> title
+
+  function getViewDisplay(viewValue) {
+    var v = (viewValue || "").toString().trim();
+    if (!v) return "Default";
+    if (v.length !== 32 || !isSysId(v)) return v;
+
+    if (viewCache[v]) return viewCache[v];
+
+    var vw = new GlideRecord("sys_ui_view");
+    viewCache[v] = vw.get(v)
+      ? (vw.getValue("title") || vw.getDisplayValue() || v).toString()
+      : v;
+    return viewCache[v];
+  }
+
   /************** STEP 1: Build table list **************/
   function getTargetTables() {
     var tables = [];
@@ -203,7 +201,9 @@
     var dbo = new GlideRecord("sys_db_object");
     dbo.addQuery("name", "STARTSWITH", CONFIG.TABLE_PREFIX);
     dbo.query();
-    while (dbo.next()) tables.push((dbo.getValue("name") || "").toString());
+    while (dbo.next()) {
+      tables.push((dbo.getValue("name") || "").toString());
+    }
 
     for (var i = 0; i < CONFIG.EXTRA_TABLES.length; i++) {
       if (tables.indexOf(CONFIG.EXTRA_TABLES[i]) < 0)
@@ -221,11 +221,7 @@
     for (var i = 0; i < tables.length; i++) viewsByTable[tables[i]] = {};
 
     var el = new GlideRecord("sys_ui_element");
-    el.addQuery(
-      "element",
-      "IN",
-      CONFIG.LEGACY_INSTALL + "," + CONFIG.LEGACY_SUB
-    );
+    el.addQuery("element", "IN", CONFIG.LEGACY_FIELDS.join(","));
     el.addQuery("sys_ui_section.name", "IN", tables.join(","));
     el.addNotNullQuery("sys_ui_section");
     el.query();
@@ -256,107 +252,60 @@
     return el.next();
   }
 
-  /************** STEP 4: Enumerate eligible sections for (table, view) **************/
-  function sectionHasBothLegacyFields(sectionSysId) {
-    var foundInstall = false;
-    var foundSub = false;
+  /************** STEP 4: Find anchor (earliest legacy element) for a (table, view) **************/
+  function findAnchor(table, viewId) {
+    // Returns { sectionSysId, pos, element, sys_id } or null
+    var best = null;
 
     var el = new GlideRecord("sys_ui_element");
-    el.addQuery("sys_ui_section", sectionSysId);
-    el.addQuery(
-      "element",
-      "IN",
-      CONFIG.LEGACY_INSTALL + "," + CONFIG.LEGACY_SUB
-    );
+    el.addQuery("sys_ui_section.name", table);
+    if (viewId) el.addQuery("sys_ui_section.view", viewId);
+    else el.addQuery("sys_ui_section.view", "");
+    el.addQuery("element", "IN", CONFIG.LEGACY_FIELDS.join(","));
+    el.addNotNullQuery("sys_ui_section");
     el.query();
 
     while (el.next()) {
-      var f = (el.getValue("element") || "").toString();
-      if (f === CONFIG.LEGACY_INSTALL) foundInstall = true;
-      if (f === CONFIG.LEGACY_SUB) foundSub = true;
-      if (foundInstall && foundSub) return true;
-    }
-    return false;
-  }
+      var secId = (el.getValue("sys_ui_section") || "").toString();
+      if (!secId) continue;
 
-  function getSectionsForTableView(table, viewId) {
-    var sections = [];
-    var sec = new GlideRecord("sys_ui_section");
-    sec.addQuery("name", table);
-    if (viewId) sec.addQuery("view", viewId);
-    else sec.addQuery("view", "");
-    sec.query();
-
-    while (sec.next()) {
-      var secId = sec.getUniqueValue();
-      if (sectionHasBothLegacyFields(secId)) sections.push(secId);
-    }
-    return sections;
-  }
-
-  /************** STEP 5: Adapt one section (shift then insert) **************/
-  function getAnchorPositionsDeterministic(sectionSysId) {
-    // If duplicates exist, pick the record with lowest position; tie-break by sys_id.
-    var bestInstall = { pos: null, sysId: null };
-    var bestSub = { pos: null, sysId: null };
-
-    var el = new GlideRecord("sys_ui_element");
-    el.addQuery("sys_ui_section", sectionSysId);
-    el.addQuery(
-      "element",
-      "IN",
-      CONFIG.LEGACY_INSTALL + "," + CONFIG.LEGACY_SUB
-    );
-    el.query();
-
-    while (el.next()) {
-      var f = (el.getValue("element") || "").toString();
       var p = safeInt(el.getValue("position"));
-      var id = el.getUniqueValue();
+      var cand = {
+        sectionSysId: secId,
+        pos: p,
+        element: (el.getValue("element") || "").toString(),
+        sys_id: el.getUniqueValue(),
+      };
 
-      if (f === CONFIG.LEGACY_INSTALL) {
-        if (
-          bestInstall.pos === null ||
-          stableLess(p, id, bestInstall.pos, bestInstall.sysId)
-        ) {
-          bestInstall.pos = p;
-          bestInstall.sysId = id;
-        }
-      } else if (f === CONFIG.LEGACY_SUB) {
-        if (
-          bestSub.pos === null ||
-          stableLess(p, id, bestSub.pos, bestSub.sysId)
-        ) {
-          bestSub.pos = p;
-          bestSub.sysId = id;
-        }
-      }
+      if (!best || stableLess(cand, best)) best = cand;
     }
 
-    return { posInstall: bestInstall.pos, posSub: bestSub.pos };
+    return best;
   }
 
-  function shiftPositions(table, viewLabel, sectionSysId, posInstall, posSub) {
+  /************** STEP 5: Shift positions inside the anchor section **************/
+  function shiftSectionFromPosition(
+    table,
+    viewLabel,
+    viewId,
+    sectionSysId,
+    anchorPos,
+    delta
+  ) {
     var el = new GlideRecord("sys_ui_element");
     el.addQuery("sys_ui_section", sectionSysId);
+    el.addQuery("position", ">=", anchorPos);
     el.orderBy("position");
     el.query();
 
     while (el.next()) {
       var oldPos = safeInt(el.getValue("position"));
-      var delta = 0;
-
-      if (oldPos >= posInstall) delta++;
-      if (oldPos >= posSub) delta++;
-
-      if (delta === 0) continue;
-
       var newPos = oldPos + delta;
 
       if (!CONFIG.APPLY) {
         addRow({
           table: table,
-          view: viewLabel,
+          view: viewLabel, // <-- display name
           action: "SHIFT_DRYRUN",
           section: sectionSysId,
           element: (el.getValue("element") || "").toString(),
@@ -372,7 +321,7 @@
 
       addRow({
         table: table,
-        view: viewLabel,
+        view: viewLabel, // <-- display name
         action: "SHIFT_APPLIED",
         section: sectionSysId,
         element: (el.getValue("element") || "").toString(),
@@ -383,76 +332,93 @@
     }
   }
 
-  function adaptSection(table, viewLabel, sectionSysId) {
-    // Avoid shifting if the target LC stage already exists in this section.
-    if (elementExistsInSection(sectionSysId, CONFIG.LC_STAGE)) {
+  /************** STEP 6: Process a single (table, view) **************/
+  function processTableView(table, viewId) {
+    var viewLabel = getViewDisplay(viewId);
+
+    if (viewHasLifecycleStage(table, viewId)) {
       addRow({
         table: table,
         view: viewLabel,
-        action: "SECTION_SKIP_LC_EXISTS",
-        section: sectionSysId,
+        action: "VIEW_SKIP",
+        section: "",
         element: CONFIG.LC_STAGE,
         oldPos: "",
         newPos: "",
-        note: "life_cycle_stage already in section",
+        note: "life_cycle_stage already present on view",
       });
       return;
     }
 
-    var anchors = getAnchorPositionsDeterministic(sectionSysId);
-    if (anchors.posInstall === null || anchors.posSub === null) {
+    var anchor = findAnchor(table, viewId);
+    if (!anchor) {
       addRow({
         table: table,
         view: viewLabel,
-        action: "SECTION_SKIP_MISSING",
-        section: sectionSysId,
+        action: "VIEW_NO_LEGACY",
+        section: "",
         element: "",
         oldPos: "",
         newPos: "",
-        note: "missing install_status or substatus in section",
+        note: "",
       });
       return;
     }
 
-    shiftPositions(
+    addRow({
+      table: table,
+      view: viewLabel,
+      action: "VIEW_ANCHOR",
+      section: anchor.sectionSysId,
+      element: anchor.element,
+      oldPos: "",
+      newPos: anchor.pos,
+      note: "sys_ui_element=" + anchor.sys_id,
+    });
+
+    // Shift first so anchorPos is free for LC fields
+    shiftSectionFromPosition(
       table,
       viewLabel,
-      sectionSysId,
-      anchors.posInstall,
-      anchors.posSub
+      viewId,
+      anchor.sectionSysId,
+      anchor.pos,
+      2
     );
 
+    // Insert LC pair (stage then status)
     insertElement(
       table,
       viewLabel,
-      sectionSysId,
+      viewId,
+      anchor.sectionSysId,
       CONFIG.LC_STAGE,
-      anchors.posInstall
+      anchor.pos
     );
     insertElement(
       table,
       viewLabel,
-      sectionSysId,
+      viewId,
+      anchor.sectionSysId,
       CONFIG.LC_STATUS,
-      anchors.posSub
+      anchor.pos + 1
     );
 
     addRow({
       table: table,
       view: viewLabel,
-      action: "SECTION_DONE",
-      section: sectionSysId,
+      action: "VIEW_DONE",
+      section: anchor.sectionSysId,
       element: "",
       oldPos: "",
       newPos: "",
-      note: "LC inserted at " + anchors.posInstall + " and " + anchors.posSub,
+      note: "LC inserted at pos " + anchor.pos,
     });
   }
 
   /************** MAIN **************/
   function run() {
     var tables = getTargetTables();
-
     addRow({
       table: "",
       view: "",
@@ -481,62 +447,7 @@
       var hadView = false;
       for (var viewId in views) {
         hadView = true;
-        var viewLabel = getViewDisplay(viewId);
-
-        if (viewHasLifecycleStage(table, viewId)) {
-          addRow({
-            table: table,
-            view: viewLabel,
-            action: "VIEW_SKIP",
-            section: "",
-            element: CONFIG.LC_STAGE,
-            oldPos: "",
-            newPos: "",
-            note: "life_cycle_stage already present on view",
-          });
-          continue;
-        }
-
-        var sections = getSectionsForTableView(table, viewId);
-        if (sections.length === 0) {
-          addRow({
-            table: table,
-            view: viewLabel,
-            action: "VIEW_NO_SECTIONS",
-            section: "",
-            element: "",
-            oldPos: "",
-            newPos: "",
-            note: "no sections with BOTH legacy fields",
-          });
-          continue;
-        }
-
-        addRow({
-          table: table,
-          view: viewLabel,
-          action: "VIEW_PROCESS",
-          section: "",
-          element: "",
-          oldPos: "",
-          newPos: "",
-          note: "sections=" + sections.length,
-        });
-
-        for (var s = 0; s < sections.length; s++) {
-          adaptSection(table, viewLabel, sections[s]);
-        }
-
-        addRow({
-          table: table,
-          view: viewLabel,
-          action: "VIEW_DONE",
-          section: "",
-          element: "",
-          oldPos: "",
-          newPos: "",
-          note: "",
-        });
+        processTableView(table, viewId);
       }
 
       if (!hadView) {
@@ -548,7 +459,7 @@
           element: "",
           oldPos: "",
           newPos: "",
-          note: "no views with legacy fields found for this table",
+          note: "No views with legacy fields found for this table",
         });
       }
     }

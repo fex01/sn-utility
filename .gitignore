@@ -2,3 +2,4 @@
 .DS_Store
 *DiskStation*
 input_for_analysis/*
+output/*
